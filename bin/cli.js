@@ -34,12 +34,11 @@ const transformers = [
   // TODO: 考虑大多数项目并没有直接使用新版本的 `@antd-design/icons`
   // 该项 codemod script 如需使用请通过 extraScripts 传入
   // 'v4-Icon-Outlined',
-  'v3-Icon-to-v4-Icon',
-  'v3-Modal-method-with-icon-to-v4',
-  'v3-component-with-string-icon-props-to-v4',
+  // 'v3-Icon-to-v4-Icon',
+  // 'v3-Modal-method-with-icon-to-v4',
+  // 'v3-component-with-string-icon-props-to-v4',
   'v3-Component-to-compatible',
-  'v3-LocaleProvider-to-v4-ConfigProvider',
-  'v3-typings-to-compatible',
+  'v3-FormItemFieldDecorator-to-ItemComponent',
 ];
 
 const dependencyProperties = [
@@ -55,7 +54,11 @@ async function ensureGitClean() {
   try {
     clean = await isGitClean();
   } catch (err) {
-    if (err && err.stderr && err.stderr.toLowerCase().includes('not a git repository')) {
+    if (
+      err &&
+      err.stderr &&
+      err.stderr.toLowerCase().includes('not a git repository')
+    ) {
       clean = true;
     }
   }

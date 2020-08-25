@@ -7,7 +7,7 @@ jest.mock('../v3-FormItemFieldDecorator-to-ItemComponent', () => {
   );
 });
 
-const tests = ['simple'];
+const tests = ['simple', 'completeForm'];
 
 const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 
